@@ -1,4 +1,4 @@
-# airtel-money-.cd-promo-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
