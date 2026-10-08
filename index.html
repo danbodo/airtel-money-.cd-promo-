@@ -1,44 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alvine Money</title>
-</head>
+function motDePasseOublie() {
+  document.getElementById("reset").style.display = "block";
+}
 
-<body>
+function demanderReset() {
+  const email = document.getElementById("resetEmail").value;
+  const message = document.getElementById("resetMessage");
 
-  <h1>airtel Money</h1>
+  if (!email) {
+    message.style.color = "red";
+    message.textContent = "Entre ton adresse e-mail.";
+    return;
+  }
 
-  <input id="username" type="text" placeholder="Nom d'utilisateur">
-
-  <input id="password" type="password" placeholder="Mot de passe">
-
-  <input id="pin" type="password" placeholder="PIN">
-
-  <button onclick="login()">Se connecter</button>
-
-  <p id="message"></p>
-
-  <script>
-    function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const pin = document.getElementById("pin").value;
-
-      if (
-        username === "alvine" &&
-        password === "demo123" &&
-        pin === "1234"
-      ) {
-        document.getElementById("message").textContent =
-          "Connexion réussie !";
-      } else {
-        document.getElementById("message").textContent =
-          "Identifiants incorrects.";
-      }
-    }
-  </script>
-
-</body>
-</html>
+  message.style.color = "green";
+  message.textContent =
+    "Si ce compte existe, un lien de réinitialisation sera envoyé.";
+}
