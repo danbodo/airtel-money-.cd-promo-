@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Airtel Money</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Money - Démo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .header {
+      background: #e60000;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .box {
+      max-width: 400px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    input {
+      border: 1px solid #ccc;
+    }
+
+    button {
+      border: none;
+      background: #e60000;
+      color: white;
+      font-weight: bold;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .demo {
+      background: #fff3f3;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Airtel Money</h1>
-  <p>Mon site fonctionne !</p>
+
+  <div class="header">
+    <h1>Airtel Money</h1>
+    <p>Version démo</p>
+  </div>
+
+  <div class="box">
+    <h2>Bienvenue</h2>
+
+    <input type="text" id="name" placeholder="Votre nom">
+
+    <button onclick="continuer()">Continuer</button>
+
+    <div class="demo">
+      Ceci est une démonstration. Aucun PIN ou mot de passe réel n'est demandé.
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function continuer() {
+      const name = document.getElementById("name").value;
+
+      if (name.trim() === "") {
+        document.getElementById("message").textContent =
+          "Veuillez entrer votre nom.";
+        return;
+      }
+
+      document.getElementById("message").textContent =
+        "Bienvenue " + name + " !";
+    }
+  </script>
+
 </body>
 </html>
