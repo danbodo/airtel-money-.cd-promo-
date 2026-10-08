@@ -1,189 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airtel Money - Démo</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: #f4f4f4;
-}
-
-header {
-  background: #e30613;
-  color: white;
-  padding: 22px;
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.box {
-  width: 90%;
-  max-width: 400px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px #ccc;
-}
-
-h2 {
-  text-align: center;
-}
-
-.demo {
-  text-align: center;
-  color: #777;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 14px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 12px;
-  background: #e30613;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#dashboard {
-  display: none;
-}
-
-.solde {
-  background: #e30613;
-  color: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.solde h1 {
-  margin: 10px 0;
-}
-
-.action {
-  background: white;
-  color: #222;
-  border: 1px solid #ddd;
-}
-
-.logout {
-  background: #555;
-}
-
-.message {
-  text-align: center;
-  margin-top: 15px;
-  font-weight: bold;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvine Money</title>
 </head>
 
 <body>
 
-<header>Airtel Money</header>
+  <h1>airtel Money</h1>
 
-<!-- CONNEXION -->
-<div class="box" id="login">
+  <input id="username" type="text" placeholder="Nom d'utilisateur">
 
-  <h2>Connexion</h2>
+  <input id="password" type="password" placeholder="Mot de passe">
 
-  <div class="demo">
-    ⚠️ VERSION DÉMO — aucun vrai compte n'est connecté.
-  </div>
+  <input id="pin" type="password" placeholder="PIN">
 
-  <input type="text" id="username" placeholder="Nom d'utilisateur">
+  <button onclick="login()">Se connecter</button>
 
-  <input type="password" id="password" placeholder="Mot de passe démo">
+  <p id="message"></p>
 
-  <input type="password" id="pin" placeholder="PIN démo">
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const pin = document.getElementById("pin").value;
 
-  <button onclick="connexion()">Se connecter</button>
-
-  <div class="message" id="message"></div>
-
-</div>
-
-<!-- TABLEAU DE BORD -->
-<div class="box" id="dashboard">
-
-  <h2>Bienvenue 👋</h2>
-
-  <div class="solde">
-    <div>Solde disponible</div>
-    <h1>50 000 FC</h1>
-    <small>Solde fictif — démonstration</small>
-  </div>
-
-  <button class="action" onclick="alert('Fonction démo : envoyer de l’argent')">
-    📤 Envoyer de l'argent
-  </button>
-
-  <button class="action" onclick="alert('Fonction démo : recevoir de l’argent')">
-    📥 Recevoir de l'argent
-  </button>
-
-  <button class="action" onclick="alert('Aucune transaction réelle')">
-    📋 Historique
-  </button>
-
-  <button class="logout" onclick="deconnexion()">
-    🚪 Déconnexion
-  </button>
-
-</div>
-
-<script>
-
-function connexion() {
-
-  const password = document.getElementById("password").value;
-  const pin = document.getElementById("pin").value;
-  const message = document.getElementById("message");
-
-  if (password === "demo123" && pin === "1234") {
-
-    document.getElementById("login").style.display = "none";
-    document.getElementById("dashboard").style.display = "block";
-
-  } else {
-
-    message.style.color = "red";
-    message.innerHTML = "❌ Identifiants de démonstration incorrects.";
-
-  }
-}
-
-function deconnexion() {
-
-  document.getElementById("dashboard").style.display = "none";
-  document.getElementById("login").style.display = "block";
-
-}
-
-</script>
+      if (
+        username === "alvine" &&
+        password === "demo123" &&
+        pin === "1234"
+      ) {
+        document.getElementById("message").textContent =
+          "Connexion réussie !";
+      } else {
+        document.getElementById("message").textContent =
+          "Identifiants incorrects.";
+      }
+    }
+  </script>
 
 </body>
 </html>
