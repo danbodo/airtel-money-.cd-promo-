@@ -1,11 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Money - Démo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #e30613;
+      color: white;
+      padding: 22px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+    }
+
+    .demo {
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      background: #e30613;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>ÇA MARCHE 🔥</h1>
-  <p>Mon site est bien en ligne.</p>
+
+  <header>
+    Airtel Money
+  </header>
+
+  <div class="box">
+    <h2>Connexion</h2>
+
+    <div class="demo">
+      ⚠️ Version démo — aucun vrai compte n'est utilisé.
+    </div>
+
+    <input type="text" id="username" placeholder="Nom d'utilisateur">
+
+    <input type="password" id="password" placeholder="Mot de passe démo">
+
+    <input type="password" id="pin" placeholder="PIN démo">
+
+    <button onclick="connexion()">Se connecter</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function connexion() {
+      const password = document.getElementById("password").value;
+      const pin = document.getElementById("pin").value;
+      const message = document.getElementById("message");
+
+      if (password === "demo123" && pin === "1234") {
+        message.style.color = "green";
+        message.innerHTML = "✅ Connexion démo réussie !";
+      } else {
+        message.style.color = "red";
+        message.innerHTML = "❌ Identifiants de démonstration incorrects.";
+      }
+    }
+  </script>
+
 </body>
 </html>
